@@ -1,0 +1,67 @@
+<style>
+    @font-face {
+        font-family: Acme;
+        src: url("./fonts/Acme/Acme-Regular.ttf");
+    }
+
+body {
+    font-family: 'Acme', sans-serif;
+    color:#C3DFE9;
+    background: rgb(0,67,70);
+    background: linear-gradient(180deg, rgba(0,67,70,1) 0%, rgba(0,67,70,1) 96%, rgba(255,255,255,1) 100%);
+}
+
+#fotoInicio, #fotoCasal {
+    border-radius: 50%;
+}
+
+h1 {
+    color: #15F4B5;
+    font-weight: 100;
+}
+
+h2, h3 {
+    color: #15F4B5;
+    font-weight: 100;
+}
+
+p, li {
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 30px;
+}
+ 
+ .current-function {
+     font-size: 22px;
+     font-style: italic;
+     background-color: #B27B06;
+     border-radius: 100%;
+     color: #fff;
+ }
+
+ .strong-style {
+    color: #fff;
+    font-weight: 100;
+ }
+
+.button-style {
+    background-color: #B27B06;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 18px;
+    text-decoration: none ;
+    color: white;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.object-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+</style>
