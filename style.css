@@ -1,67 +1,116 @@
-<style>
+
     @font-face {
         font-family: Acme;
         src: url("./fonts/Acme/Acme-Regular.ttf");
     }
 
+    * {
+        margin: 0px ;
+        padding: 0;
+    }
+
 body {
-    font-family: 'Acme', sans-serif;
-    color:#C3DFE9;
-    background: rgb(0,67,70);
-    background: linear-gradient(180deg, rgba(0,67,70,1) 0%, rgba(0,67,70,1) 96%, rgba(255,255,255,1) 100%);
+    font-family: 'Noto Sans JP', sans-serif;
+    background-image: url(./fotos/foto_background.jpeg);
+    background-position: center;
+    background-size: cover ;
 }
 
-#fotoInicio, #fotoCasal {
-    border-radius: 50%;
+#head {
+    position: fixed;
+    width: 100vmax;
+    background-color: black;
+    padding: 10px;
 }
 
-h1 {
-    color: #15F4B5;
-    font-weight: 100;
-}
-
-h2, h3 {
-    color: #15F4B5;
-    font-weight: 100;
-}
-
-p, li {
-    font-weight: 200;
-    font-size: 22px;
-    line-height: 30px;
-}
- 
- .current-function {
-     font-size: 22px;
-     font-style: italic;
-     background-color: #B27B06;
-     border-radius: 100%;
-     color: #fff;
- }
-
- .strong-style {
-    color: #fff;
-    font-weight: 100;
- }
-
-.button-style {
-    background-color: #B27B06;
-    padding: 2px 5px;
-    border-radius: 4px;
+a.menu {
     font-size: 18px;
+    font-weight: bold;
     text-decoration: none ;
-    color: white;
+    color:#fff;
+    padding: 10px 50px 10px;
 }
 
-.center-text {
+.null {
+    padding: 30px;
+}
+
+a.menu:hover {
+    background-color: #ffff;
+    color: #2A282A;
+    font-weight: 800;
+    border-radius: 5px;
+    padding: 10px 100px 10px;
+}
+
+#start{
+    padding-top: 120px;
+    font-weight: bold;
+   
+}
+
+h1.myName {
+    font-size: 100px;
+    font-weight: 700;
     text-align: center;
+    color: #1C1C21;
 }
 
-.object-center {
+#fotoInicio {
+    border-radius: 50%;
+    margin-top: 30px;
+    width: 300px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.current-function {
+    background-color: #2A282A;
+    color: #fff;
+    margin: 20px 410px 30px;
+    padding: 10px 0px 10px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 50px;
+    font-family:'Acme';
+    font-weight: lighter;
+}
 
-</style>
+
+#skills {
+
+}
+
+#bio {
+
+}
+
+#redes {
+
+}
+
+h2, h3 {
+    color: #2A282A;
+    font-weight: 100;
+}
+
+.bar {
+    list-style-type: none;
+}
+
+p.center-text, li {
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 30px;
+    color:#44444B;
+}
+ 
+
+/*
+.object-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
