@@ -1,116 +1,17 @@
 
-    @font-face {
-        font-family: Acme;
-        src: url("./fonts/Acme/Acme-Regular.ttf");
-    }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-    * {
-        margin: 0px ;
-        padding: 0;
-    }
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-image: url(./fotos/foto_background.jpeg);
-    background-position: center;
-    background-size: cover ;
+    font-family: 'Noto Sans', sans-serif;
+    background-image: url(/fotos/foto_background.jpeg);
+    background-size: cover;
 }
 
-#head {
-    position: fixed;
-    width: 100vmax;
-    background-color: black;
-    padding: 10px;
+header {
+    background-color: #000000;
 }
-
-a.menu {
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none ;
-    color:#fff;
-    padding: 10px 50px 10px;
-}
-
-.null {
-    padding: 30px;
-}
-
-a.menu:hover {
-    background-color: #ffff;
-    color: #2A282A;
-    font-weight: 800;
-    border-radius: 5px;
-    padding: 10px 100px 10px;
-}
-
-#start{
-    padding-top: 120px;
-    font-weight: bold;
-   
-}
-
-h1.myName {
-    font-size: 100px;
-    font-weight: 700;
-    text-align: center;
-    color: #1C1C21;
-}
-
-#fotoInicio {
-    border-radius: 50%;
-    margin-top: 30px;
-    width: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.current-function {
-    background-color: #2A282A;
-    color: #fff;
-    margin: 20px 410px 30px;
-    padding: 10px 0px 10px;
-    font-size: 25px;
-    text-align: center;
-    border-radius: 50px;
-    font-family:'Acme';
-    font-weight: lighter;
-}
-
-
-#skills {
-
-}
-
-#bio {
-
-}
-
-#redes {
-
-}
-
-h2, h3 {
-    color: #2A282A;
-    font-weight: 100;
-}
-
-.bar {
-    list-style-type: none;
-}
-
-p.center-text, li {
-    font-weight: 100;
-    font-size: 22px;
-    line-height: 30px;
-    color:#44444B;
-}
- 
-
-/*
-.object-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-/*
