@@ -1,17 +1,82 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
 * {
     margin: 0px;
     padding: 0px;
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
-    background-image: url(/fotos/foto_background.jpeg);
-    background-size: cover;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
-    background-color: #000000;
+    display: inline-block;
+    background-image: url(./.fotos/foto_teclado.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding-top: 24.6%;
+    padding-bottom: 24.6%;
+}
+
+#fotoInicio {
+    position: absolute;
+    bottom: 27%;
+    width: 350px;
+    margin-left: 5%;
+    border: 10px groove #7C98A9;
+    border-radius: 50%;
+    box-shadow: 1px 9px 2px #12191D;
+}
+
+header h1 {
+    position: absolute;
+    left: 35%;
+    bottom: 80%;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 90px;
+    font-weight: bold;
+    font-weight: 800;
+    color: #F4F4F4;
+    text-shadow: 1px 5px 2px #12191D;
+}
+
+header h2 {
+    position: absolute;
+    left: 35%;
+    bottom: 60%;
+    font-size: 60px;
+    font-weight: bold;
+    font-weight: 800;
+    color: #F4F4F4;
+    text-shadow: 1px 5px 2px #12191D;
+}
+
+header p {
+    position: absolute;
+    margin-right: 14%;
+    padding: 10px;
+    border-radius: 5px;
+    left: 35%;
+    bottom: 40%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #F4F4F4;
+    text-shadow: 3px 3px 4px #12191D;
+}
+
+header h3 {
+    position: absolute;
+    background-color: #26363e96;
+    margin-right: 14%;
+    padding: 10px;
+    border-radius: 5px;
+    border-radius: 5px;
+    left: 35%;
+    bottom: 30%;
+    font-size: 27px;
+    font-weight: 700;
+    color: #F4F4F4;
+    text-shadow: 1px 3px 2px #12191D;
 }
