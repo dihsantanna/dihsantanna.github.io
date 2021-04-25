@@ -15,9 +15,21 @@ header {
     background-image: url(./.fotos/foto_teclado.jpg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    padding-top: 23.5%;
+    padding-bottom: 23.5%;
+}
+
+header section {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     padding-top: 24.6%;
     padding-bottom: 24.6%;
+    background-color: #26363e96;
+    background-position: center;
+    background-size: cover;
 }
 
 #fotoInicio {
@@ -33,7 +45,7 @@ header {
 header h1 {
     position: absolute;
     left: 35%;
-    bottom: 80%;
+    bottom: 78%;
     font-family: 'Fira Sans', sans-serif;
     font-size: 90px;
     font-weight: bold;
@@ -46,6 +58,7 @@ header h2 {
     position: absolute;
     left: 35%;
     bottom: 60%;
+    border-radius: 5px 5px 5px 0px;
     font-size: 60px;
     font-weight: bold;
     font-weight: 800;
@@ -57,9 +70,9 @@ header p {
     position: absolute;
     margin-right: 14%;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 0px;
     left: 35%;
-    bottom: 40%;
+    bottom: 40.1%;
     font-size: 25px;
     font-weight: 600;
     color: #F4F4F4;
@@ -68,15 +81,24 @@ header p {
 
 header h3 {
     position: absolute;
-    background-color: #26363e96;
     margin-right: 14%;
     padding: 10px;
     border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     left: 35%;
-    bottom: 30%;
+    bottom: 31%;
     font-size: 27px;
     font-weight: 700;
     color: #F4F4F4;
     text-shadow: 1px 3px 2px #12191D;
+}
+
+#soft-skills {
+    background-image: url(./.fotos/foto_soft_skills.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    padding-top: 24.6%;
+    padding-bottom: 24.6%;
 }
