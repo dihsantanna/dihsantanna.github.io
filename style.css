@@ -16,7 +16,7 @@ body {
 
 header {
     position:absolute;
-    background-image: url(./.fotos/foto_teclado.jpg);
+    background-image: url(./fotos/foto_teclado.jpg);
     background-position: center;
     background-size:cover;
     background-attachment: fixed;
@@ -97,7 +97,7 @@ header p {
 #soft-skills {
     position:absolute;
     top: 662px;
-    background-image: url(./.fotos/foto_soft_skills.jpeg);
+    background-image: url(./fotos/foto_soft_skills.jpeg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -123,7 +123,7 @@ header p {
 #hard-skills {
     position:absolute;
     top:1338px;
-    background-image: url(./.fotos/foto_hard_skills.jpg);
+    background-image: url(./fotos/foto_hard_skills.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -150,7 +150,7 @@ header p {
 #bio {
     position:absolute;
     top:2008px;
-    background-image: url(./.fotos/foto_bio.jpg);
+    background-image: url(./fotos/foto_bio.jpg);
     background-position: center;
     background-size:cover;
     background-attachment: fixed;
