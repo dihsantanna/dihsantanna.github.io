@@ -6,6 +6,10 @@
     padding: 0px;
 }
 
+html{
+    scroll-behavior: smooth;
+ }
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
 }
@@ -15,6 +19,7 @@ header {
     background-image: url(./.fotos/foto_teclado.jpg);
     background-position: center;
     background-size:cover;
+    background-attachment: fixed;
     padding-bottom: 180px;
 }
 
@@ -25,12 +30,13 @@ header section {
     background-color: #26363e96;
     background-position: center;
     background-size: cover;
+    padding-bottom: 180px;
 }
 
 #fotoInicio {
     position: absolute;
-    margin-top: 100px;
-    margin-left: 60px;
+    top: 160px;
+    left: 80px;
     width: 350px;
     border: 10px groove #7C98A9;
     border-radius: 50%;
@@ -56,7 +62,7 @@ header h1 {
 
 header h2 {
     margin-left: 470px;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     border-radius: 5px 5px 5px 0px;
     font-size: 60px;
     font-weight: bold;
@@ -65,27 +71,27 @@ header h2 {
     text-shadow: 1px 5px 2px #12191D;
 }
 
+header h3 {
+    margin-left: 470px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 27px;
+    font-weight: 700;
+    color: #F4F4F4;
+    text-shadow: 1px 3px 2px #12191D;
+}
+
 header p {
     margin-left: 470px;
-    padding: 10px;
+    margin-right: 69px;
+    padding: 20px;
     border-radius: 0px 0px 5px 0px;
     font-size: 25px;
     font-weight: 600;
     color: #F4F4F4;
     text-shadow: 3px 3px 4px #12191D;
-}
-
-header h3 {
-    margin-left: 470px;
-    padding: 10px;
-    border-radius: 5px;
-    border-radius: 0px 0px 5px 5px;
-    left: 470px;
-    bottom: 140px;
-    font-size: 27px;
-    font-weight: 700;
-    color: #F4F4F4;
-    text-shadow: 1px 3px 2px #12191D;
 }
 
 #soft-skills {
@@ -149,7 +155,6 @@ header h3 {
     background-size:cover;
     background-attachment: fixed;
     width: 100%;
-    padding-bottom: 150px ;
 }
 
 #fotoCasal {
@@ -181,4 +186,90 @@ header h3 {
     font-weight: 550;
     font-size: 22px;
     text-shadow: 1px 1px 2px #12191D;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    margin-top: 125px;
+    text-align: center;
+}
+
+.menu {
+    position: fixed;
+    top: 12%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding-right: 5px;
+    margin: 0;
+    border-radius: 0px 10px 10px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 3px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0px 10px 10px;
+    font-size: 18px;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    box-shadow: 2px 2px 3px black;
+
+}
+
+.menu li:hover, .menu a:hover {
+    background-color: white;
+    color: black;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    transition: padding 0.2s;
+}
+
+.redesSociais {
+    position: fixed;
+    top: 72%;
+    left: 95%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.redesSociais li {
+    list-style: none;
+}
+
+.redesSociais img {
+    width: 35px;
+    filter: grayscale(80%);
+    box-shadow: 2px 3px 5px black;
+}
+
+.redesSociais img:hover {
+    filter:saturate(2);
+}
+
+.gitHub {
+    position: fixed;
+    top: 2%;
+    left: 90.9%;
+}
+
+.gitHub img {
+    width: 100px;
+    box-shadow: none;
+}
+
+.gitHub a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.gitHub a:hover {
+    color: white;
 }
