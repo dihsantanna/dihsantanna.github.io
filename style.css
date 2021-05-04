@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
 * {
     margin: 0px;
@@ -11,7 +10,7 @@ html{
  }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 header {
@@ -30,7 +29,7 @@ header section {
     background-color: #26363e96;
     background-position: center;
     background-size: cover;
-    padding-bottom: 180px;
+    padding-bottom: 205px;
 }
 
 #fotoInicio {
@@ -52,7 +51,6 @@ header div {
 header h1 {
     margin-left: 470px;
     margin-bottom: 60px;
-    font-family: 'Fira Sans', sans-serif;
     font-size: 90px;
     font-weight: bold;
     font-weight: 800;
@@ -102,7 +100,7 @@ header p {
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    padding-bottom: 130px ;
+    padding-bottom: 180px ;
 }
 
 #soft-skills h2 {
@@ -122,13 +120,13 @@ header p {
 
 #hard-skills {
     position:absolute;
-    top:1338px;
+    top:1325px;
     background-image: url(./fotos/foto_hard_skills.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    padding-bottom: 80px ;
+    padding-bottom: 135px ;
 }
 
 #hard-skills h2 {
@@ -149,7 +147,7 @@ header p {
 
 #bio {
     position:absolute;
-    top:2008px;
+    top:1988px;
     background-image: url(./fotos/foto_bio.jpg);
     background-position: center;
     background-size:cover;
@@ -191,7 +189,7 @@ header p {
 footer {
     background-color: black;
     color: white;
-    margin-top: 125px;
+    margin-top: 180px;
     text-align: center;
 }
 
@@ -215,7 +213,6 @@ footer {
     border: 1px solid white;
     border-radius: 0px 10px 10px;
     font-size: 18px;
-    font-family: 'Fira Sans', sans-serif;
     text-align: center;
     box-shadow: 2px 2px 3px black;
 
@@ -244,9 +241,9 @@ footer {
 }
 
 .redesSociais img {
-    width: 35px;
     filter: grayscale(80%);
     box-shadow: 2px 3px 5px black;
+    border-radius: 5px;
 }
 
 .redesSociais img:hover {
