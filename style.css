@@ -20,6 +20,7 @@ header {
     background-size:cover;
     background-attachment: fixed;
     padding-bottom: 180px;
+    width: 100%;
 }
 
 header section {
