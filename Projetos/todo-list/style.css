@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Special+Elite&display=swap');
+
+body {
+  font-family: 'Special Elite', cursive;
+  background-image: url('rocky-wall-color-scheme.jpeg');
+  background-size: cover;
+}
+
+#all {
+  position: relative;
+  background-color: rgba(255 , 255 , 255 , 0.733);
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  top: 50px;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 5px 5px black;
+}
+
+header {
+  font-size: xx-large;
+  text-decoration: underline;
+  font-weight: 700;
+  color: rgb(53 , 35 , 11);
+}
+
+#funcionamento {
+  font-style: oblique;
+  font-size: 14px;
+  color: rgb(53 , 35 , 11);
+  margin-bottom: 30px;
+}
+
+.marcador {
+  background-color: gray;
+  color: rgb(39, 23, 3);
+}
+
+.completed {
+  text-decoration: line-through solid black;
+  color: rgb(100 , 100 , 99);
+  font-style: italic;
+}
+
+input {
+  font-size: 14px;
+  padding: 3px 6px;
+  border-radius: 40px;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+button {
+  font-size: 14px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+input:hover {
+  box-shadow: 0 0 3px 3px rgb(101 , 147 , 180);
+}
+
+
+button:hover {
+  box-shadow: 0 0 3px 3px rgb(101 , 147 , 180);
+}
+
+#criar-tarefa {
+  background-color: cyan;
+  padding: 4px 6px;
+}
+
+.mover-selecionado {
+  margin: 10px;
+  padding: 2px 8px;
+  font-size: 17px;
+  font-weight: 600;
+  background: rgb(133 , 101 , 60);
+  border-radius: 40px;
+}
+
+#remover-selecionado {
+  background-color: rgb(255 , 68 , 0);
+  margin-bottom: 5px;
+  padding: 4px 6px;
+}
+
+#remover-finalizados {
+  background-color: rgb(0 , 0 , 0);
+  color: rgb(255 , 255 , 255);
+  margin-bottom: 5px;
+  padding: 4px 6px;
+}
+
+#apaga-tudo {
+  background-color: rgb(255 , 0 , 0);
+  margin-bottom: 5px; 
+  padding: 4px 6px; 
+}
+
+#salvar-tarefas {
+  background-color: rgb(0 , 255 , 0);
+  margin-bottom: 5px;
+  padding: 4px 6px;
+}
+
+.tarefa {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
