@@ -45,7 +45,7 @@ header {
 }
 
 input {
-  font-size: 14px;
+  font-size: 16px;
   padding: 3px 6px;
   border-radius: 40px;
   margin-bottom: 5px;
@@ -74,11 +74,14 @@ button:hover {
 
 .mover-selecionado {
   margin: 10px;
-  padding: 2px 8px;
-  font-size: 17px;
-  font-weight: 600;
-  background: rgb(133 , 101 , 60);
-  border-radius: 40px;
+  padding: 4px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  background: rgb(15, 0, 221);
+  color: white;
+  border-radius: 15px;
+  border-color: white;
 }
 
 #remover-selecionado {
