@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header></header>
+    <section id="all">
+        <h1 id="title">Paleta de Cores</h1>
+        <div id="color-palette"></div>
+        <section id="board-config">
+            <span>Aumente o quadro escolhendo um números de 5 a 50:</span>
+            <input id="board-size" type="number" min="1" required="required" name="numbers" pattern="[1-9]+$"/>
+            <button id="generate-board">VQV</button>
+            <button id="clear-board">Limpar</button>
+        </section>
+        <div id="pixel-board"></div>
+    </section>
+    <footer><em>Compilado por Diogo Sant'Anna.</em></footer>
+</body>
+<script src="script.js"></script>
+</html>
