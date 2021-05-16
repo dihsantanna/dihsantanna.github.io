@@ -1,14 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
  }
 
 body {
-    font-family: 'Fira Sans', sans-serif;
+  width: 100%;
 }
 
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+header li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  background-color: rgba(22, 20, 20, 0.5);
+  padding: 3px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bolder;
+}
+
+header a:hover {
+  color: black;
+  background-color: white;
+}
+
+#start {
+  background-image: url('./fotos/foto_inicio.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 10px;
+}
+.start-container{
+display: flex;
+justify-content: space-around;
+margin-top: 100px;
+align-content: center;
+flex-wrap: wrap;
+width: 100%;
+}
+
+#foto-start {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.start-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+#foto-casal {
+  width: 300px;
+}
