@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,9 @@ html{
 
 body {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1 100vh;
 }
 
 header {
@@ -39,7 +43,7 @@ header li {
 
 header a {
   text-decoration: none;
-  background-color: rgba(22, 20, 20, 0.5);
+  background-color: rgba(22 , 20 , 20 , 0.5);
   padding: 3px;
   border-radius: 3px;
   color: white;
@@ -55,10 +59,11 @@ header a:hover {
   background-image: url('./fotos/foto_inicio.jpg');
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   align-content: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding-bottom: 10px;
 }
 .start-container{
@@ -73,7 +78,9 @@ width: 100%;
 #foto-start {
   width: 250px;
   height: 250px;
+  border: 4px solid black;
   border-radius: 50%;
+  box-shadow: 0 0 5px 2px black;
 }
 
 .start-container div {
@@ -84,21 +91,77 @@ width: 100%;
   width: 70%;
 }
 
-h1 {
+.start-container h1 {
   font-size: 60px;
   margin-bottom: 30px;
 }
 
-h2 {
+.start-container h2 {
   font-size: 35px;
   margin-bottom: 5px;
 }
 
-h3 {
+.start-container h3 {
   font-size: 20px;
   margin-bottom: 40px;
 }
 
+.start-container p {
+  color: rgb(33 , 33 , 33);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#bio {
+  background-image: url('./fotos/foto_bio.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#bio h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.bio-container div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 #foto-casal {
-  width: 300px;
+  width: 250px;
+  border: 4px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px black;
+  margin-bottom: 10px;
+}
+
+.bio-text {
+  background-color: rgba(255 , 255 , 255 , 0.39);
+  color: rgb(43, 39, 39);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px black;
+  font-family: 'KoHo', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  width: 70%;
+}
+
+strong {
+  color: black;
 }
