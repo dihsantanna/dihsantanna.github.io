@@ -7,6 +7,10 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 html{
   scroll-behavior: smooth;
  }
@@ -44,8 +48,8 @@ header li {
   opacity: 0.8;
 }
 
+
 header a {
-  text-decoration: none;
   padding: 3px;
   color: white;
   font-weight: bolder;
@@ -253,4 +257,15 @@ footer {
   font-family: 'KoHo', sans-serif;
   font-weight: 500;
   font-size: 17px;
+}
+
+.redesSociais {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.redesSociais  i {
+  font-size: 32px;
 }
