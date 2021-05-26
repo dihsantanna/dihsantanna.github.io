@@ -223,11 +223,11 @@ strong {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
   width: 100%;
-  min-height: 100vh;
-  padding-bottom: 10px;
+  height: 90vh;
+  padding-top: 60px;
 }
 
 #hard-skills h2 {
@@ -242,4 +242,15 @@ strong {
   font-size: 25px;
   font-weight: 600;
   line-height: 2;
+}
+
+footer {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: 'KoHo', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
 }
