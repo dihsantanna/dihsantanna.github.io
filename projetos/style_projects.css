@@ -1,13 +1,24 @@
 * {
   padding: 0;
   margin: 0;
-  font-size: 100%;
   box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
   font-family: 'Indie Flower', cursive;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   text-decoration: none;
+  opacity: 0.8;
+  color: black;
+}
+
+li {
+  list-style: none;
 }
 
 header {
@@ -15,14 +26,14 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: black;
-  height: 55px;
+  height: 65px;
 }
 
 #title {
   font-size: 40px;
   background-color: white;
   border-radius: 50%;
-  padding: 50px;
+  padding: 5px;
   text-shadow: 2px 2px  2px grey;
   text-decoration: underline;
   flex-basis: 85vw;
@@ -43,4 +54,50 @@ header a:hover {
   opacity: 1;
   background-color: white;
   color: black;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+#projects-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  border: solid black 1px;
+  border-radius: 20px;
+}
+
+#trybeProjects-container, #personalProjects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: khaki;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  height: 70%;
+}
+
+#trybe-projects  a {
+  font-size: 20px;
+  text-shadow: 2px 2px  2px grey;
+}
+
+#trybe-projects  a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  text-align: center;
 }
