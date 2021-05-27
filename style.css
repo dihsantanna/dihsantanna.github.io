@@ -288,3 +288,11 @@ footer {
   font-size: 32px;
   color: black;
 }
+
+.redesSociais li {
+  opacity: 0.8;
+}
+
+.redesSociais li:hover {
+  opacity: 1;
+}
