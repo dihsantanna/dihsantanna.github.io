@@ -8,7 +8,7 @@ const softSkills = [
     'Gosto de trabalhar em equipe',
     'Comprometimento com as responsabilidades;',
     'Tratar a todos com Empatia.'
-];
+].sort();
 // Array contendo todas as hard skills
 const hardSkills = [
     'Unix;',
@@ -23,7 +23,7 @@ const hardSkills = [
     'Forms;',
     'Unit Tests;',
     'HOF.'
-];
+].sort();
 // Função que gera listas de skills dinâmicamente
 function createSkillsList(arrSkills, element) {
     for (const index of arrSkills) {
