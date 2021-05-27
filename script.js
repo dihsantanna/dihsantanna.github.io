@@ -26,8 +26,7 @@ const hardSkills = [
 ].sort();
 // Função que gera listas de skills dinâmicamente
 function createSkillsList(arrSkills, element) {
-    for (const index of arrSkills) {
-        const skill = index;
+    for (const skill of arrSkills) {
         const itemTag = document.createElement('li');
         itemTag.innerHTML = skill;
         element.appendChild(itemTag);
