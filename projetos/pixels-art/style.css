@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap') ;
 
 * {
   margin: 0;
@@ -30,7 +30,7 @@ header {
 }
 
 #title {
-  font-family: "Special Elite", cursive,  monospace, sans-serif;
+  font-family: Special Elite, cursive , monospace, sans-serif;
   font-size: 60px;
   margin-top: 20px;
   margin-bottom: 10px;
