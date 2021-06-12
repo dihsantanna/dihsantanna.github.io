@@ -353,10 +353,48 @@ body {
 
 }
 
-@media screen and ( max-width : 470px ) {
+@media screen and ( max-width : 420px ) {
+
+  .items {
+    flex-basis: 56%;
+  }
+
+  .cart {
+    width: 36%;
+    left: 56%;
+  }
 
   .cart__items {
-    margin: 0;
+    width: 90%;
+  }
+
+  .cart .cart__title {
+    font-size: 12pt;
+    font-weight: 600;
+  }
+
+}
+
+@media screen and ( max-width : 360px ) {
+
+  .head h1 {
+    font-size: 30px;
+  }
+
+  .search-container {
+    width: 80%;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  .cart {
+    width: 34%;
+    left: 59%;
+  }
+
+  .cart__items {
     width: 90%;
   }
 
