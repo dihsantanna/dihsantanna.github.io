@@ -7,7 +7,7 @@ const softSkills = [
     'Comunicativo;',
     'Gosto de trabalhar em equipe',
     'Comprometimento com as responsabilidades;',
-    'Tratar a todos com Empatia.'
+    'Tratar a todos com Empatia;'
 ].sort();
 
 const hardSkills = [
@@ -19,7 +19,8 @@ const hardSkills = [
     'DOM;',
     'Forms;',
     'Unit Tests;',
-    'HOF.'
+    'HoFs;',
+    'Promises;'
 ].sort();
 
 function createElement(elementName, innerHTML, className) {
