@@ -22,12 +22,18 @@ const hardSkills = [
     'HOF.'
 ].sort();
 
+function createElement(elementName, innerHTML, className) {
+  const itemTag = document.createElement(elementName);
+  if (className) itemTag.className = className;
+  if (innerHTML) itemTag.innerHTML = innerHTML;
+  return itemTag;
+}
+
 function createSkillsList(arrSkills, element) {
-    for (const skill of arrSkills) {
-        const itemTag = document.createElement('li');
-        itemTag.innerHTML = skill;
-        element.appendChild(itemTag);
-    }
+    arrSkills.forEach((skill) => {
+      const elementSkill = createElement('li', skill, 'skill');
+      element.appendChild(elementSkill);
+    })
 }
 window.onload = () => {
     createSkillsList(softSkills, softSkillsList);
