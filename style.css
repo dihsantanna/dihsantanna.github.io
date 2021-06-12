@@ -21,15 +21,22 @@ html{
   scroll-behavior: smooth;
  }
 
+body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1 100vh;
+}
+
 header {
   position: fixed;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: black;
   color: white;
   height: 50px;
-  max-width: 100vw;
-  border-radius: 0 0 10px 10px;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
   border-bottom: slategrey solid 3px;
   padding: 0 25px;
 }
@@ -40,20 +47,20 @@ header ul {
   flex-wrap: wrap;
   align-items: center;
 }
-
+  
 header li {
   border: 3px solid transparent;
   border-radius: 5px;
   opacity: 0.8;
 }
-
+ 
 header a {
   padding: 3px;
   color: white;
   font-weight: bolder;
-  font-size: 14px;
+  font-size: 20px;
 }
-
+  
 header li:hover {
   border-left: 3px solid white;
   border-right: 3px solid white;
@@ -65,7 +72,7 @@ header li:hover {
 header i {
   font-size: 32px;
 }
-
+  
 header li:nth-child(6):hover {
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
@@ -73,286 +80,222 @@ header li:nth-child(6):hover {
   transition: all 0.5s ease;
   opacity: 1;
 }
-
-@media screen and (min-width: 1024) {
-  body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1 100vh;
-  }
   
-  header {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    height: 50px;
-    width: 100%;
-    border-radius: 0 0 20px 20px;
-    border-bottom: slategrey solid 3px;
-    padding: 0 25px;
-  }
-  
-  header ul {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  header li {
-    border: 3px solid transparent;
-    border-radius: 5px;
-    opacity: 0.8;
-  }
-  
-  
-  header a {
-    padding: 3px;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-  }
-  
-  header li:hover {
-    border-left: 3px solid white;
-    border-right: 3px solid white;
-    border-bottom: 3px solid white;
-    transition: all 0.5s ease;
-    opacity: 1;
-  }
-  
-  header i {
-    font-size: 32px;
-  }
-  
-  header li:nth-child(6):hover {
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    transition: all 0.5s ease;
-    opacity: 1;
-  }
-  
-  #start {
-    background-image: url('./fotos/foto_inicio.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    align-content: center;
-    width: 100%;
-    min-height: 100vh;
-    padding-bottom: 10px;
-  }
-  .start-container{
+#start {
+  background-image: url('./fotos/foto_inicio.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+}
+.start-container{
   display: flex;
   justify-content: space-around;
   margin-top: 100px;
   align-content: center;
   flex-wrap: wrap;
   width: 100%;
-  }
+}
   
-  #foto-start {
-    width: 300px;
-    border: 4px solid black;
-    border-radius: 50%;
-    box-shadow: 0 0 5px 2px black;
-  }
+#foto-start {
+  width: 300px;
+  border: 4px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px black;
+}
+
+.start-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+}
   
-  .start-container div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 70%;
-  }
+.start-container h1 {
+  font-size: 70px;
+  margin-bottom: 30px;
+}
   
-  .start-container h1 {
-    font-size: 70px;
-    margin-bottom: 30px;
-  }
+.start-container h2 {
+  font-size: 45px;
+  margin-bottom: 5px;
+}
   
-  .start-container h2 {
-    font-size: 45px;
-    margin-bottom: 5px;
-  }
+.start-container h3 {
+  font-size: 25px;
+  margin-bottom: 40px;
+}
   
-  .start-container h3 {
-    font-size: 25px;
-    margin-bottom: 40px;
-  }
+.start-container p {
+  color: rgb(33 , 33 , 33);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#bio {
+  background-image: url('./fotos/foto_bio.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+}
   
-  .start-container p {
-    color: rgb(33 , 33 , 33);
-    font-size: 20px;
-    font-weight: 600;
-  }
+.bio-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
   
-  #bio {
-    background-image: url('./fotos/foto_bio.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 100vh;
-    padding-bottom: 10px;
-  }
+#bio h2 {
+  text-align: center;
+  font-size: 45px;
+}
   
-  .bio-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.bio-container div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
   
-  #bio h2 {
-    text-align: center;
-    font-size: 45px;
-  }
+#foto-casal {
+  width: 300px;
+  border: 4px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px black;
+  margin-bottom: 10px;
+}
   
-  .bio-container div {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
+.bio-text {
+  color: rgb(43, 39, 39);
+  font-family: 'KoHo', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: justify;
+  width: 70%;
+}
   
-  #foto-casal {
-    width: 300px;
-    border: 4px solid black;
-    border-radius: 50%;
-    box-shadow: 0 0 5px 2px black;
-    margin-bottom: 10px;
-  }
+.hi {
+  font-size: 22px;
+}
   
-  .bio-text {
-    color: rgb(43, 39, 39);
-    font-family: 'KoHo', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: justify;
-    width: 70%;
-  }
+strong {
+  color: black;
+}
   
-  .hi {
-    font-size: 22px;
-  }
+#soft-skills {
+  background-image: url('./fotos/foto_soft_skills.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+}
   
-  strong {
-    color: black;
-  }
+#soft-skills h2 {
+  background-color: rgba(255, 255, 0, 0.8);
+  padding: 10px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 45px;
+}
   
-  #soft-skills {
-    background-image: url('./fotos/foto_soft_skills.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
-    width: 100%;
-    min-height: 100vh;
-    padding-bottom: 10px;
-  }
+.my-hard-skills, .my-soft-skills {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  max-height: 60vh;
+  min-width: 40vw;
+  max-width: 90vw;
+}
   
-  #soft-skills h2 {
-    background-color: rgba(255, 255, 0, 0.8);
-    padding: 10px;
-    border-radius: 25px;
-    text-align: center;
-    font-size: 45px;
-  }
+.my-soft-skills {
+  background-color: rgba(255, 255, 0, 0.8);
+  padding: 10px;
+  border-radius: 25px;
+}
   
-  .my-hard-skills, .my-soft-skills {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    max-height: 60vh;
-    min-width: 40vw;
-    max-width: 90vw;
-  }
+.my-soft-skills li {
+  color: black;
+  font-family: 'KoHo', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 2;
+}
   
-  .my-soft-skills {
-    background-color: rgba(255, 255, 0, 0.8);
-    padding: 10px;
-    border-radius: 25px;
-  }
+#hard-skills {
+  background-image: url('./fotos/foto_hard_skills.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-top: 70px;
+}
   
-  .my-soft-skills li {
-    color: black;
-    font-family: 'KoHo', sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 2;
-  }
+#hard-skills h2 {
+  text-align: center;
+  font-size: 45px;
+}
   
-  #hard-skills {
-    background-image: url('./fotos/foto_hard_skills.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    width: 100%;
-    height: 100vh;
-    padding-top: 70px;
-  }
+.my-hard-skills li {
+  color: black;
+  font-family: 'KoHo', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 2;
+}
   
-  #hard-skills h2 {
-    text-align: center;
-    font-size: 45px;
-  }
+footer {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: 'KoHo', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+}
   
-  .my-hard-skills li {
-    color: black;
-    font-family: 'KoHo', sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 2;
-  }
-  
-  footer {
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: 'KoHo', sans-serif;
-    font-weight: 500;
-    font-size: 17px;
-  
-  }
-  
-  .redesSociais {
-    position: fixed;
-    left: 95vw;
-    top: 70vh;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    border-radius: 15px;
-  }
-  
-  .redesSociais  i {
-    font-size: 32px;
-    color: black;
-  }
-  
-  .redesSociais li {
-    opacity: 0.8;
-  }
-  
-  .redesSociais li:hover {
-    opacity: 1;
-  }
+.redesSociais {
+  position: fixed;
+  left: 95vw;
+  top: 70vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.redesSociais  i {
+  font-size: 32px;
+  color: black;
+}
+
+.redesSociais li {
+  opacity: 0.8;
+}
+
+.redesSociais li:hover {
+  opacity: 1;
 }
