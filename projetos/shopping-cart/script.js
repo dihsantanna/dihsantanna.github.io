@@ -18,8 +18,8 @@ const totalPriceEqualZero = () => {
 const totalPrice = () => {
   const prices = Array.from(cart.childNodes);
   const regExp = /\d*\.?\d*$/;
-  const result = prices.reduce((acc, { innerHTML }) => {
-    const value = acc + parseFloat(innerHTML.match(regExp));
+  const result = prices.reduce((acc, { innerText }) => {
+    const value = acc + parseFloat(innerText.match(regExp));
     return value;
   }, 0);
   total.innerHTML = result.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -62,9 +62,15 @@ const saveLocalStorage = () => {
 };
 
 function cartItemClickListener(event) {
-   cart.removeChild(event.target);
-   saveLocalStorage();
-   totalPrice();
+  const element = event.target;
+  const element2 = element.parentNode;
+  if (element2.classList.contains('cart__item')) {
+    cart.removeChild(element2);
+  } else {
+    cart.removeChild(element);
+  }
+  saveLocalStorage();
+  totalPrice();
 }
 
 const loadLocalStorage = () => {
@@ -75,12 +81,12 @@ const loadLocalStorage = () => {
   }
 };
 
-function createCartItemElement({ id: sku, title: name, price: salePrice }) {
+function createCartItemElement({ title: name, price: salePrice, thumbnail: imageSource }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerText = `${name}
-
-R$${salePrice}`;
+  li.innerHTML = `<img src=${imageSource}><br>
+  ${name}<br>
+  <br>R$ ${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
