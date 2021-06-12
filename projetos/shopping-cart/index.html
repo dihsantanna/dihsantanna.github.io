@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
@@ -12,9 +13,9 @@
   
   <body>
     <header class="head">
-      <h1>Shopping Cart</h1>
+      <h1><i class="icon-cart bi bi-shop"></i> Shopping Cart</h1>
       <div class="search-container">
-        <input type="text" name="search" id="search" placeholder="Insira sua busca aqui">
+        <input type="search" name="search" id="search" placeholder="Insira sua busca aqui">
         <span id="search-span">Pressione Enter</span>
       </div>
     </header>
@@ -22,7 +23,7 @@
       <section class="items"></section>
       <section class="cart">
         <span class="cart__title">Carrinho de compras</span>
-        <div class="total-container">$ <span class="total-price"></span></div>
+        <div class="total-container"><span class="total-price"></span></div>
         <button class="empty-cart">Esvaziar carrinho</button>
         <ol class="cart__items"></ol>
       </section>
