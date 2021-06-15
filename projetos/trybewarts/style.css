@@ -313,10 +313,6 @@ footer {
 
 @media screen and ( max-width : 600px ) {
 
-  #evaluation-form {
-    padding: 20px;
-  }
-
   .subject {
     margin-left: 8px;
   }
@@ -339,7 +335,7 @@ footer {
 
 }
 
-@media screen and ( max-width : 392px ) {
+@media screen and ( max-width : 395px ) {
 
   .rate {
     margin-left: 16px;
