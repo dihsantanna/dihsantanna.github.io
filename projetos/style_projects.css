@@ -19,6 +19,7 @@ a {
 
 li {
   list-style: none;
+  text-align: center;
 }
 
 header {
@@ -85,7 +86,7 @@ main {
   height: 70%;
 }
 
-#trybe-projects  a {
+#trybe-projects  li {
   font-size: 20px;
   text-shadow: 2px 2px  2px grey;
 }
@@ -93,6 +94,13 @@ main {
 #trybe-projects  a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+.obs {
+  width: 100%;
+  color: red;
+  font-size: 12px;
+  text-align: center;
 }
 
 footer {
