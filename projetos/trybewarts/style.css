@@ -313,6 +313,10 @@ footer {
 
 @media screen and ( max-width : 600px ) {
 
+  #evaluation-form {
+    padding: 20px;
+  }
+
   .subject {
     margin-left: 8px;
   }
