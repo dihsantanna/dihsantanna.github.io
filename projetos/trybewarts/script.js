@@ -1,7 +1,3 @@
-const SRC = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1051532824';
-const COLOR_PLAYER = '&color=%2300ffa3';
-const AUTO_PLAY = '&auto_play=true';
-const iframe = document.querySelector('iframe');
 const MSG_LOGIN = 'Olá, Tryber!';
 const MSG_ERROR = 'Login ou senha inválidos.';
 const MSG_ERROR_SUBJECTS = 'Qual ou quais conteúdos você está com mais vontade de aprender? ;)';
@@ -37,15 +33,6 @@ const initApplication = () => {
   header.innerHTML = '';
   header.style.height = '0';
   mainStyle.opacity = '1';
-};
-
-const createMusicPlayer = () => {
-  iframe.setAttribute('scrolling', 'no');
-  iframe.setAttribute('frameborder', 'no');
-  iframe.width = '400px';
-  iframe.height = '60px';
-  iframe.allow = 'autoplay';
-  iframe.src = SRC + COLOR_PLAYER + AUTO_PLAY;
 };
 
 const eventLogin = () => {
@@ -142,7 +129,6 @@ const returnDataCopy = () => {
 
 window.onload = () => {
   eventLogin();
-  createMusicPlayer();
   agreeUseInformation();
   characterCounter();
   returnDataCopy();

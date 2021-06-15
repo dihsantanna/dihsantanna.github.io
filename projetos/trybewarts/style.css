@@ -68,17 +68,6 @@ h1 {
   transform: translate(3px, 3px);
 }
 
-.music-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-#music {
-  height: 20px;
-  margin: 10px 10px 0 0;
-}
-
 main {
   align-items: center;
   display: flex;
@@ -236,10 +225,6 @@ footer {
 
   header h1 {
     font-size: 50px;
-  }
-
-  #music {
-    margin-right: 50px;
   }
 
   .rate-container {
