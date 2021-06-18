@@ -46,9 +46,19 @@ body {
   color: white;
 }
 
-.icon-cart {
+.ico-cart-container {
   display: none;
   margin-right: 2.5%;
+}
+
+.ico-cart-container b {
+  background-color: yellow;
+  padding: 3px 7px;
+  border-radius: 50%;
+  color: black;
+}
+
+.icon-cart {
   color: white;
 }
 
@@ -273,11 +283,9 @@ body {
 
 .empty-cart:hover {
   opacity: 1;
-}
-
-.empty-cart:active {
-  box-shadow: 0 0 0 0 rgb(58, 58, 58), inset 3px 3px 3px rgb(58, 58, 58);
-  transform: translate(3px, 3px);
+}.ico-cart-container {
+  display: none;
+  margin-right: 2.5%;
 }
 
 @media screen and ( max-width : 1292px ) {
@@ -312,8 +320,11 @@ body {
     flex-basis: 71%;
   }
 
-  .icon-cart {
+  .ico-cart-container {
     display: block;
+  }
+
+  .icon-cart {
     font-size: 45px;
     margin-right: 4%;
     color: white;
@@ -338,6 +349,31 @@ body {
 }
 
 @media screen and ( max-width : 519px ) {
+
+  #title {
+    align-items: center;
+    justify-content: center;
+    flex-basis: 80%;
+  }
+
+  #title h1 {
+    font-size: 40px;
+  }
+
+  .icon-cart {
+    font-size: 40px;
+    margin-right: 8%;
+    color: white;
+  }
+
+  #search {
+    width: 250px;
+  }
+
+  .cart {
+    left: 3.5%;
+    width: 85%;
+  }
 
   .items {
     flex-basis: 98%;
@@ -371,29 +407,20 @@ body {
 
 @media screen and ( max-width : 420px ) {
 
-  .items {
-    flex-basis: 56%;
+  .item {
+    width: 350px;
+    font-size: 25px;
   }
 
   .cart {
-    width: 36%;
-    left: 56%;
+    left: 5%;
+    width: 80%;
   }
-
-  .cart__items {
-    width: 90%;
-  }
-
-  .cart .cart__title {
-    font-size: 12pt;
-    font-weight: 600;
-  }
-
 }
 
-@media screen and ( max-width : 360px ) {
+@media screen and ( max-width : 375px ) {
 
-  .head h1 {
+  #title h1 {
     font-size: 30px;
   }
 
@@ -402,12 +429,22 @@ body {
   }
 
   #search {
-    width: 100%;
+    width: 80%;
+  }
+
+  .icon-cart {
+    font-size: 35px;
+    margin-right: 4%;
+    color: white;
+  }
+
+  .item {
+    width: 320px;
   }
 
   .cart {
-    width: 34%;
-    left: 59%;
+    width: 85%;
+    left: 2%;
   }
 
   .cart__items {

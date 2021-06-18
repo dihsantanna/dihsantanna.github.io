@@ -27,6 +27,13 @@ const totalPrice = () => {
   total.innerHTML = result.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 };
 
+const counterItensCart = () => {
+  const counterItens = document.querySelector('.ico-cart-container b');
+  const arrItems = document.querySelectorAll('.cart__item');
+  const cartLength = Array.from(arrItems).length;
+  counterItens.innerHTML = `${cartLength}`
+}
+
 const createEventCartMobile = () => btnCartMobile.addEventListener('click', () => {
   cartContainer.classList.toggle('cart-none');
   cartContainer.style.height = '80vh';
@@ -80,6 +87,7 @@ function cartItemClickListener(event) {
   }
   saveLocalStorage();
   totalPrice();
+  counterItensCart();
 }
 
 const loadLocalStorage = () => {
@@ -154,6 +162,7 @@ const addCart = () => {
         .appendChild(createCartItemElement(item)))
       .then(() => saveLocalStorage())
       .then(() => totalPrice())
+      .then(() => counterItensCart())
       .catch(() => {
         removeLoading();
         items.innerHTML = `<h1>${MSG_ERROR}</h1>`;
@@ -167,6 +176,7 @@ const clearCart = () => {
   clearBtn.addEventListener('click', () => {
     cart.innerHTML = '';
     totalPrice();
+    counterItensCart();
   });
 };
 
@@ -223,4 +233,5 @@ window.onload = function onload() {
   loader();
   searchEngine();
   createEventCartMobile();
+  counterItensCart();
 };
