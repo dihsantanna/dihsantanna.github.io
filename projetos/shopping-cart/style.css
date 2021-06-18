@@ -17,7 +17,6 @@ body {
 .head {
   position: fixed;
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -29,14 +28,27 @@ body {
   padding: 15px 0;
 }
 
-.head h1 {
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.icon-shop {
+  color: white;
+}
+
+#title h1 {
   font-family: Viaoda Libre, cursive;
   font-size: xxx-large;
   margin-bottom: 5px;
   color: white;
 }
 
-.icon-shop {
+.icon-cart {
+  display: none;
+  margin-right: 2.5%;
   color: white;
 }
 
@@ -288,28 +300,39 @@ body {
 
 }
 
-@media screen and ( max-width : 930px ) {
+@media screen and ( max-width : 768px ) {
+
+  .head {
+    justify-content: space-between;
+  }
+
+  #title {
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-basis: 71%;
+  }
+
+  .icon-cart {
+    display: block;
+    font-size: 45px;
+    margin-right: 4%;
+    color: white;
+  }
 
   .cart {
-    left: 55%;
-    width: 38%;
+    left: 2.5%;
+    width: 90%;
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .cart-none {
+    opacity: 0;
+    z-index: -1;
   }
 
   .items {
-    flex-basis: 55%;
-  }
-
-}
-
-@media screen and ( max-width : 763px ) {
-
-  .cart {
-    left: 48%;
-    width: 40%;
-  }
-
-  .items {
-    flex-basis: 55%;
+    flex-basis: 98%;
   }
 
 }
@@ -317,14 +340,7 @@ body {
 @media screen and ( max-width : 519px ) {
 
   .items {
-    flex-basis: 50%;
-  }
-
-  .cart {
-    left: 50%;
-    width: 42%;
-    height: 98vh;
-    padding: 10px;
+    flex-basis: 98%;
   }
 
   .cart .cart__title {
