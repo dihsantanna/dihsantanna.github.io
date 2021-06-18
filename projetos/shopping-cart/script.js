@@ -84,9 +84,10 @@ const loadLocalStorage = () => {
 function createCartItemElement({ title: name, price: salePrice, thumbnail: imageSource }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerHTML = `<img src=${imageSource}><br>
-  ${name}<br>
-  <br>R$ ${salePrice}`;
+  li.appendChild(createProductImageElement(imageSource))
+  li.innerHTML += `<br>
+    ${name}<br>
+    <br>R$ ${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
