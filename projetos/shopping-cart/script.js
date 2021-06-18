@@ -3,6 +3,8 @@ const API_ITEMS = 'https://api.mercadolibre.com/items/';
 const MSG_ERROR = 'Estamos passando por problemas. Por Favor, tente mais tarde!';
 const MSG_ERROR_SEARCH = 'Desculpa! Não foi possível encontrar a sua busca!';
 const MSG_INDEFINITE_SEARCH = 'Olá! O que você procura? =D';
+const btnCartMobile = document.querySelector('.icon-cart');
+const cartContainer = document.querySelector('.cart');
 const searchInput = document.getElementById('search');
 const pressEnter = document.getElementById('search-span');
 const body = document.querySelector('body');
@@ -24,6 +26,13 @@ const totalPrice = () => {
   }, 0);
   total.innerHTML = result.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 };
+
+const createEventCartMobile = () => btnCartMobile.addEventListener('click', () => {
+  cartContainer.classList.toggle('cart-none');
+  cartContainer.style.height = '80vh';
+  btnCartMobile.classList.toggle('bi-cart4');
+  btnCartMobile.classList.toggle('bi-x-lg');
+})
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -213,4 +222,5 @@ window.onload = function onload() {
   totalPriceEqualZero();
   loader();
   searchEngine();
+  createEventCartMobile();
 };

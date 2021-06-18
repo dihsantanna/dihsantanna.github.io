@@ -13,15 +13,18 @@
   
   <body>
     <header class="head">
-      <h1><i class="icon-shop bi bi-shop"></i> Shopping Cart</h1>
+      <div id="title">
+        <h1><i class="icon-shop bi bi-shop"></i> Shopping Cart</h1>
       <div class="search-container">
         <input type="search" name="search" id="search" placeholder="Insira sua busca aqui">
         <span id="search-span">Pressione Enter</span>
       </div>
+      </div>
+      <i class="bi bi-cart4 icon-cart"></i>
     </header>
     <section class="container">
       <section class="items"></section>
-      <section class="cart">
+      <section class="cart cart-none">
         <span class="cart__title">Carrinho de compras</span>
         <div class="total-container"><span class="total-price"></span></div>
         <button class="empty-cart">Esvaziar carrinho</button>
