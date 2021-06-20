@@ -27,7 +27,7 @@ const counterItensCart = () => {
   const counterItens = document.querySelector('.ico-cart-container b');
   const arrItems = document.querySelectorAll('.cart__item');
   const cartLength = Array.from(arrItems).length;
-  counterItens.innerHTML = `${cartLength}`
+  counterItens.innerHTML = `${cartLength}`;
 }
 
 function cartButtonMobileConfig() {
@@ -60,7 +60,8 @@ function createProductItemElement({ id: sku, title: name, thumbnail: image, pric
   
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createCustomElement('span', 'item__title', name));
-  section.appendChild(createProductImageElement(image));
+  const newImage = image.replace('I.jpg', 'O.jpg');
+  section.appendChild(createProductImageElement(newImage));
   section.appendChild(createCustomElement('span', 'item__price', price));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
   
@@ -80,7 +81,7 @@ const localStorageEngine = {
     const cartSaved = localStorage.getItem('cart');
     if (cartSaved) {
       cart.innerHTML = cartSaved;
-      counterItensCart()
+      counterItensCart();
     }
   }
 }
@@ -90,11 +91,13 @@ const { saveLocalStorage, loadLocalStorage } = localStorageEngine;
 function cartItemClickListener(event) {
   const element = event.target;
   const element2 = element.parentNode;
+
   if (element2.classList.contains('cart__item')) {
     cart.removeChild(element2);
   } else {
     cart.removeChild(element);
   }
+
   saveLocalStorage();
   totalPrice();
   counterItensCart();
@@ -162,14 +165,14 @@ const fetchImplementation = {
 
 const { fetchProductList, fetchForId } = fetchImplementation;
 
-const addCart = () => {
+const eventAddCart = () => {
   const btnAddCart = document.querySelectorAll('.item__add');
   btnAddCart.forEach((btn) => {
     btn.addEventListener('click', async () => {
       try {
         const id = await getSkuFromProductItem(btn.parentNode);
-        const item = await fetchForId(id)
-        cart.appendChild(createCartItemElement(item))
+        const item = await fetchForId(id);
+        cart.appendChild(createCartItemElement(item));
         saveLocalStorage();
         totalPrice();
         counterItensCart();
@@ -198,11 +201,11 @@ const addFoundItems = (value) => {
 
 const loader = async () => {
   try {
-    await fetchProductList(search)
-    loadLocalStorage()
+    await fetchProductList(search);
+    loadLocalStorage();
     cart.childNodes
       .forEach((li) => li.addEventListener('click', cartItemClickListener));
-    addCart();
+    eventAddCart();
     totalPrice();
     clearCart();
   } catch(error) {
