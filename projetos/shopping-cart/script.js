@@ -15,9 +15,12 @@ const total = document.querySelector('.total-price');
 const totalPrice = () => {
   total.innerHTML = 0;
   const prices = Array.from(cart.childNodes);
-  const regExp = /\d*\.?\d*$/;
+  const regExp = /\d*\.?\d*\.?\d*\,?\d*$/;
   const result = prices.reduce((acc, { innerText }) => {
-    const value = acc + parseFloat(innerText.match(regExp));
+    const editValue = innerText.match(regExp)[0]
+      .replaceAll('.', '')
+      .replace(',', '.');
+    const value = acc + parseFloat(editValue);
     return value;
   }, 0);
   total.innerHTML = result.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -55,13 +58,14 @@ function createCustomElement(element, className, innerText) {
 
 function createProductItemElement({ id: sku, title: name, thumbnail: image, price: salePrice }) {
   const price = salePrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  const newImage = image.replace('I.jpg', 'O.jpg');
   const section = document.createElement('section');
   section.className = 'item';
   
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createCustomElement('span', 'item__title', name));
-  const newImage = image.replace('I.jpg', 'O.jpg');
-  section.appendChild(createProductImageElement(newImage));
+  const imgContainer = section.appendChild(createCustomElement('span', 'image_container', ''));
+  imgContainer.appendChild(createProductImageElement(newImage));
   section.appendChild(createCustomElement('span', 'item__price', price));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
   
@@ -104,12 +108,13 @@ function cartItemClickListener(event) {
 }
 
 function createCartItemElement({ title: name, price: salePrice, thumbnail: imageSource }) {
+  const priceBRL = salePrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.appendChild(createProductImageElement(imageSource))
   li.innerHTML += `<br>
   ${name}<br>
-  <br>R$ ${salePrice}`;
+  <br>${priceBRL}`;
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
@@ -190,6 +195,7 @@ const clearCart = () => {
     cart.innerHTML = '';
     totalPrice();
     counterItensCart();
+    saveLocalStorage();
   });
 };
 
