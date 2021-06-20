@@ -143,7 +143,7 @@ const fetchImplementation = {
       if (!obj.results.length) throw new Error(MSG_ERROR_SEARCH);
       createProductsList(obj);
     } catch (error) {
-      items.innerHTML = `<h1>${error}</h1>`;
+      alert(error);
     }
   },
 
@@ -155,7 +155,7 @@ const fetchImplementation = {
       return await response.json();
     } catch (error) {
       removeLoading();
-      items.innerHTML = `<h1>${error}</h1>`;
+      alert(error);
     }
   }
 }
@@ -165,18 +165,18 @@ const { fetchProductList, fetchForId } = fetchImplementation;
 const addCart = () => {
   const btnAddCart = document.querySelectorAll('.item__add');
   btnAddCart.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const id = getSkuFromProductItem(btn.parentNode);
-      fetchForId(id)
-      .then((item) => cart
-      .appendChild(createCartItemElement(item)))
-      .then(() => saveLocalStorage())
-      .then(() => totalPrice())
-      .then(() => counterItensCart())
-      .catch(() => {
+    btn.addEventListener('click', async () => {
+      try {
+        const id = await getSkuFromProductItem(btn.parentNode);
+        const item = await fetchForId(id)
+        cart.appendChild(createCartItemElement(item))
+        saveLocalStorage();
+        totalPrice();
+        counterItensCart();
+      } catch(error) {
         removeLoading();
         alert(MSG_ERROR);
-      });
+      };
     });
   });
 };
