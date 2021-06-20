@@ -11,13 +11,9 @@ const body = document.querySelector('body');
 const items = document.querySelector('.items');
 const cart = document.querySelector('.cart__items');
 const total = document.querySelector('.total-price');
-let search = 'computador';
-
-const totalPriceEqualZero = () => {
-  total.innerHTML = 0;
-};
 
 const totalPrice = () => {
+  total.innerHTML = 0;
   const prices = Array.from(cart.childNodes);
   const regExp = /\d*\.?\d*$/;
   const result = prices.reduce((acc, { innerText }) => {
@@ -34,12 +30,14 @@ const counterItensCart = () => {
   counterItens.innerHTML = `${cartLength}`
 }
 
-const createEventCartMobile = () => btnCartMobile.addEventListener('click', () => {
+function cartButtonMobileConfig() {
   cartContainer.classList.toggle('cart-none');
   cartContainer.style.height = '80vh';
   btnCartMobile.classList.toggle('bi-cart4');
   btnCartMobile.classList.toggle('bi-x-lg');
-})
+}
+
+const createEventCartMobile = () => btnCartMobile.addEventListener('click', cartButtonMobileConfig());
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -59,7 +57,7 @@ function createProductItemElement({ id: sku, title: name, thumbnail: image, pric
   const price = salePrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   const section = document.createElement('section');
   section.className = 'item';
-
+  
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
@@ -103,8 +101,8 @@ function createCartItemElement({ title: name, price: salePrice, thumbnail: image
   li.className = 'cart__item';
   li.appendChild(createProductImageElement(imageSource))
   li.innerHTML += `<br>
-    ${name}<br>
-    <br>R$ ${salePrice}`;
+  ${name}<br>
+  <br>R$ ${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
@@ -122,9 +120,9 @@ const removeLoading = () => {
 const createProductsList = (obj) => {
   const itens = document.querySelector('.items');
   const arr = obj.results;
-    arr.forEach((computer) => {
-      itens.appendChild(createProductItemElement(computer));
-    });
+  arr.forEach((computer) => {
+    itens.appendChild(createProductItemElement(computer));
+  });
 };
 
 const fetchProductList = async (item) => {
@@ -159,7 +157,7 @@ const addCart = () => {
       const id = getSkuFromProductItem(btn.parentNode);
       fetchForId(id)
       .then((item) => cart
-        .appendChild(createCartItemElement(item)))
+      .appendChild(createCartItemElement(item)))
       .then(() => saveLocalStorage())
       .then(() => totalPrice())
       .then(() => counterItensCart())
@@ -180,6 +178,12 @@ const clearCart = () => {
   });
 };
 
+let search = 'computador';
+
+const addFoundItems = (value) => {
+  search = value;
+};
+
 const loader = () => {
   fetchProductList(search)
   .then(() => loadLocalStorage())
@@ -194,10 +198,6 @@ const loader = () => {
 
 const clearItems = () => {
   items.innerHTML = '';
-};
-
-const addFoundItems = (value) => {
-  search = value;
 };
 
 const tipFocus = () => {
@@ -229,7 +229,6 @@ const searchEngine = () => {
 };
 
 window.onload = function onload() {
-  totalPriceEqualZero();
   loader();
   searchEngine();
   createEventCartMobile();
