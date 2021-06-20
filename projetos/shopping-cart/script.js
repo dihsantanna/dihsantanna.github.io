@@ -37,7 +37,7 @@ function cartButtonMobileConfig() {
   btnCartMobile.classList.toggle('bi-x-lg');
 }
 
-const createEventCartMobile = () => btnCartMobile.addEventListener('click', cartButtonMobileConfig());
+const createEventCartMobile = () => btnCartMobile.addEventListener('click', cartButtonMobileConfig);
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -71,9 +71,21 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-const saveLocalStorage = () => {
-  localStorage.setItem('cart', cart.innerHTML);
-};
+const localStorageEngine = {
+  saveLocalStorage: () => {
+    localStorage.setItem('cart', cart.innerHTML);
+  },
+
+  loadLocalStorage: () => {
+    const cartSaved = localStorage.getItem('cart');
+    if (cartSaved) {
+      cart.innerHTML = cartSaved;
+      counterItensCart()
+    }
+  }
+}
+
+const { saveLocalStorage, loadLocalStorage } = localStorageEngine;
 
 function cartItemClickListener(event) {
   const element = event.target;
@@ -88,14 +100,6 @@ function cartItemClickListener(event) {
   counterItensCart();
 }
 
-const loadLocalStorage = () => {
-  const cartSaved = localStorage.getItem('cart');
-  if (cartSaved) {
-    cart.innerHTML = cartSaved;
-    cart.childNodes.forEach((li) => li.addEventListener('click', cartItemClickListener));
-  }
-};
-
 function createCartItemElement({ title: name, price: salePrice, thumbnail: imageSource }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
@@ -107,15 +111,19 @@ function createCartItemElement({ title: name, price: salePrice, thumbnail: image
   return li;
 }
 
-const createLoading = () => {
-  const loading = createCustomElement('span', 'loading', 'loading...');
-  body.appendChild(loading);
-};
+const loadingImplementation = {
+  createLoading: () => {
+    const loading = createCustomElement('span', 'loading', 'loading...');
+    body.appendChild(loading);
+  },
 
-const removeLoading = () => {
-  const loading = document.querySelector('.loading');
-  if (loading) loading.remove();
-};
+  removeLoading: () => {
+    const loading = document.querySelector('.loading');
+    if (loading) loading.remove();
+  }
+}
+
+const { createLoading, removeLoading } = loadingImplementation;
 
 const createProductsList = (obj) => {
   const itens = document.querySelector('.items');
@@ -125,30 +133,34 @@ const createProductsList = (obj) => {
   });
 };
 
-const fetchProductList = async (item) => {
-  createLoading();
-  try {
-    const response = await fetch(`${API_URL}?q=${item}`);
-    removeLoading();
-    const obj = await response.json();
-    if (!obj.results.length) throw new Error(MSG_ERROR_SEARCH);
-    createProductsList(obj);
-  } catch (error) {
-    items.innerHTML = `<h1>${error}</h1>`;
-  }
-};
+const fetchImplementation = {
+  fetchProductList: async (item) => {
+    createLoading();
+    try {
+      const response = await fetch(`${API_URL}?q=${item}`);
+      removeLoading();
+      const obj = await response.json();
+      if (!obj.results.length) throw new Error(MSG_ERROR_SEARCH);
+      createProductsList(obj);
+    } catch (error) {
+      items.innerHTML = `<h1>${error}</h1>`;
+    }
+  },
 
-const fetchForId = async (id) => {
-  createLoading();
-  try {
-    const response = await fetch(`${API_ITEMS}${id}`);
-    removeLoading();
-    return await response.json();
-  } catch (error) {
-    removeLoading();
-    items.innerHTML = `<h1>${error}</h1>`;
+  fetchForId: async (id) => {
+    createLoading();
+    try {
+      const response = await fetch(`${API_ITEMS}${id}`);
+      removeLoading();
+      return await response.json();
+    } catch (error) {
+      removeLoading();
+      items.innerHTML = `<h1>${error}</h1>`;
+    }
   }
-};
+}
+
+const { fetchProductList, fetchForId } = fetchImplementation;
 
 const addCart = () => {
   const btnAddCart = document.querySelectorAll('.item__add');
@@ -163,7 +175,7 @@ const addCart = () => {
       .then(() => counterItensCart())
       .catch(() => {
         removeLoading();
-        items.innerHTML = `<h1>${MSG_ERROR}</h1>`;
+        alert(MSG_ERROR);
       });
     });
   });
@@ -184,16 +196,19 @@ const addFoundItems = (value) => {
   search = value;
 };
 
-const loader = () => {
-  fetchProductList(search)
-  .then(() => loadLocalStorage())
-  .then(() => addCart())
-  .then(() => totalPrice())
-  .then(() => clearCart())
-  .catch(() => {
+const loader = async () => {
+  try {
+    await fetchProductList(search)
+    loadLocalStorage()
+    cart.childNodes
+      .forEach((li) => li.addEventListener('click', cartItemClickListener));
+    addCart();
+    totalPrice();
+    clearCart();
+  } catch(error) {
     removeLoading();
-    items.innerHTML = `<h1>${MSG_ERROR}</h1>`;
-  });
+    alert(MSG_ERROR);
+  };
 };
 
 const clearItems = () => {

@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfólio de Diogo Sant'Anna",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dihsantanna/dihsantanna.github.io.git"
+  },
+  "keywords": [],
+  "author": "Diogo Sant'Anna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dihsantanna/dihsantanna.github.io/issues"
+  },
+  "homepage": "https://dihsantanna.github.io",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.4"
+  }
+}
